@@ -18,13 +18,14 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-	box = new Dustbin(750,200,90,10);
-    box1 = new Dustbin(790,200,10,70);
-	box2 = new Dustbin(695,200,10,70);
+	
+	ground = new Ground(400,500,width,10);
 
-	ground=new Ground(400,height-200,width,10);
+	paper = new Paper(100,100,20,20);
+	box = new Dustbin(595,200,15,100);
+	box2 = new Dustbin(650,300,100,15);
+	box3 = new Dustbin(705,200,15,100);
 
-	paper = new Paper(50,200,20);
 	Engine.run(engine);
   
 }
@@ -32,21 +33,22 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
-  
-  box.display();
-  box1.display();
-  box2.display();
-  ground.display();
+  background("black");
+ 
+
+ 
   paper.display();
-  keyPressed();
+  box.display();
+  box2.display();
+  box3.display();
+  ground.display();
   drawSprites();
  
 }
-
+keyPressed();
 function keyPressed(){
 	if (keyCode === UP_ARROW){
-		Matter.Body.applyForce(paper.body,paper.body.position,{x:3,y:-4});
+		Matter.Body.applyForce(paper.body,paper.body.position,{x:0.04,y:-0.07});
 	}
 }
 
