@@ -11,14 +11,14 @@ class Paper{
       this.y=y;
       this.body = Bodies.circle(this.x, this.y,this.radius,gr);
      
-     this.image = loadImage("images/ball.png");
+
     World.add(world,this.body);
   }
   display(){
       var posi = this.body.position;
       ellipseMode(RADIUS);
      // fill("purple");
-      image(this.image,posi.x,posi.y,this.radius,this.radius);
+      ellipse(posi.x,posi.y,this.radius,this.radius);
       
   }
 }

@@ -17,8 +17,7 @@
     display(){
         var posi = this.body.position;
         rectMode(CENTER);
-        stroke("white");
-        fill("white");
+       // fill("purple");
        rect(posi.x,posi.y,this.width,this.height);
       
         
